@@ -103,6 +103,7 @@ h4 {
 }
 
 .library {
+  background: white;
   position: fixed;
   top: 0;
   left: 0;

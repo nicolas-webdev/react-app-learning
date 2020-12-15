@@ -1,6 +1,9 @@
-const LibrarySong = ({ song }) => {
+const LibrarySong = ({ song, setCurrentSong }) => {
+  const songSelectHandler = () => {
+    setCurrentSong(song);
+  };
   return (
-    <div className="library-song">
+    <div onClick={songSelectHandler} className="library-song">
       <img alt={song.name} src={song.cover}></img>
       <div className="song-description">
         <h3>{song.name}</h3>
