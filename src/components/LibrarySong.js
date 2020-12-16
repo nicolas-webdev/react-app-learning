@@ -1,5 +1,4 @@
 const LibrarySong = ({
-  key,
   songs,
   isPlaying,
   audioRef,
