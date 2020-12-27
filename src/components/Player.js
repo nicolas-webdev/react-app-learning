@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { playAudio } from "../util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -50,18 +49,20 @@ const Player = ({
     audioRef.current.currentTime = e.target.value;
     setSongInfo({ ...songInfo, currentTime: e.target.value });
   };
-  const skipTrackHandler = (direction) => {
+  const skipTrackHandler = async (direction) => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     if (direction === "skip-forward") {
-      setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+      await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
     } else if (direction === "skip-back") {
       if (currentIndex === 0) {
-        setCurrentSong(songs[songs.length - 1]);
+        await setCurrentSong(songs[songs.length - 1]);
       } else {
-        setCurrentSong(songs[currentIndex - 1]);
+        await setCurrentSong(songs[currentIndex - 1]);
       }
     }
-    playAudio(isPlaying, audioRef);
+    if (isPlaying) {
+      audioRef.current.play();
+    }
   };
   //animation Percentage
   const animationPercentage = (songInfo.currentTime / songInfo.duration) * 100;
