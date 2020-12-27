@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   img {
-    width: 20%;
+    width: 400px;
     border-radius: 50%;
   }
   h2 {
@@ -18,11 +18,11 @@
 
 @media screen and (max-width: 768px) {
   .song-container {
+    min-height: 45vh;
     h2 {
       padding: 1rem 0.5rem 0.5rem;
     }
     img {
-      min-height: 50vh;
       width: 60%;
     }
   }

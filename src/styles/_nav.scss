@@ -1,7 +1,7 @@
 nav {
   min-height: 10vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   button {
     background: transparent;
@@ -22,6 +22,7 @@ nav {
 
 @media screen and (max-width: 768px) {
   nav {
+    padding: 1.5rem;
     min-height: 5vh;
     button {
       z-index: 10;
