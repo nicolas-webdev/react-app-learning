@@ -22,6 +22,7 @@ nav {
 
 @media screen and (max-width: 768px) {
   nav {
+    min-height: 5vh;
     button {
       z-index: 10;
     }
