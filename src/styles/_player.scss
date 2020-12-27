@@ -40,8 +40,11 @@ input[type="range"]:focus {
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 16px;
-  width: 16px;
+  padding: 10px;
+  height: 6px;
+  width: 6px;
+  background: transparent;
+  border: none;
 }
 
 input[type="range"]::-moz-range-thumb {
