@@ -15,6 +15,10 @@ function App() {
   //Ref
   const audioRef = useRef(null);
   //Handlers
+  const playSongHandler = () => {
+    !isPlaying ? audioRef.current.play() : audioRef.current.pause();
+    setIsPlaying(!isPlaying);
+  };
   const timeUpdateHandler = (e) => {
     const current = e.target.currentTime;
     const duration = e.target.duration;
@@ -42,8 +46,14 @@ function App() {
   return (
     <div className="App">
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
-      <Song currentSong={currentSong} audioRef={audioRef} />
+      <Song
+        currentSong={currentSong}
+        audioRef={audioRef}
+        playSongHandler={playSongHandler}
+        setLibraryStatus={setLibraryStatus}
+      />
       <Player
+        playSongHandler={playSongHandler}
         setIsPlaying={setIsPlaying}
         isPlaying={isPlaying}
         currentSong={currentSong}

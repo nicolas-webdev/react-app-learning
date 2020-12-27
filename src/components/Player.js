@@ -13,6 +13,7 @@ const Player = ({
   setSongInfo,
   audioRef,
   isPlaying,
+  playSongHandler,
   setIsPlaying,
   songs,
   setCurrentSong,
@@ -36,10 +37,7 @@ const Player = ({
     setSongs(newSongs);
   }, [currentSong]);
   //Event handlers
-  const playSongHandler = () => {
-    !isPlaying ? audioRef.current.play() : audioRef.current.pause();
-    setIsPlaying(!isPlaying);
-  };
+
   const getTime = (time) => {
     return (
       Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
